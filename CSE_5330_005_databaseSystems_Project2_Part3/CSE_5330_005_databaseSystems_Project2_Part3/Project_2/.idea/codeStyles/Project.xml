@@ -1,0 +1,14 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <ScalaCodeStyleSettings>
+      <option name="alwaysUsedImports">
+        <array>
+          <option value="io.gatling.core.Predef._" />
+          <option value="org.junit.runner.RunWith" />
+          <option value="org.scalatest.Matchers" />
+          <option value="org.scalatest._" />
+        </array>
+      </option>
+    </ScalaCodeStyleSettings>
+  </code_scheme>
+</component>

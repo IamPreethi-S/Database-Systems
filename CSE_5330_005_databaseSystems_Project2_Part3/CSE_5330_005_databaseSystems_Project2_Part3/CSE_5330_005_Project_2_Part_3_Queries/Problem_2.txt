@@ -1,0 +1,14 @@
+use pxs9233;
+
+SELECT * FROM Library;
+SELECT * FROM Publisher;
+SELECT * FROM Books;
+SELECT * FROM Member;
+SELECT * FROM Author;
+SELECT * FROM Book_author;
+SELECT * FROM Book_available;
+SELECT * FROM Book_require;
+SELECT * FROM Lib_staff;
+SELECT * FROM Book_issue;
+SELECT * FROM Lib_staff_member
+SELECT * FROM Member_phone;

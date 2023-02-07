@@ -1,0 +1,43 @@
+use pxs9233;
+
+SELECT * FROM Library;
+SELECT * FROM Publisher;
+SELECT * FROM Books;
+SELECT * FROM Member;
+SELECT * FROM Author;
+SELECT * FROM Book_author;
+SELECT * FROM Book_available;
+SELECT * FROM Book_require;
+SELECT * FROM Lib_staff;
+SELECT * FROM Book_issue;
+SELECT * FROM Lib_staff_member
+SELECT * FROM Member_phone;
+
+SELECT A.Isbn,A.Title,count(B.ISBN) AS No_of_copies,week(B.Issue_date) AS Week_No,SUM(datediff(B.Notice_date,B.Issue_date)) AS No_of_Days_Loaned_Out,A.Subject_area,C.Author_fname, C.Author_lname from Books as A INNER JOIN Book_issue as B ON A.ISBN=B.ISBN INNER JOIN Book_author as C ON A.Author_id=C.Author_id GROUP BY A.Subject_area,A.Author_id,C.Author_fname, C.Author_lname,B.ISBN,week(B.Issue_date);
+
+CREATE TABLE Book_overdue(
+Number int AUTO_INCREMENT, 
+Ssn Varchar(20), 
+Isbn varchar (13), 
+Notice_date date, 
+PRIMARY KEY (Number)
+);
+
+CREATE TRIGGER Book_overdue_update AFTER UPDATE ON Book_issue for EACH ROW INSERT INTO Book_overdue (Ssn, Isbn, Notice_date) SELECT Ssn, Isbn, Notice_date from Book_issue where Notice_date < CURRENT_DATE();
+
+CREATE TRIGGER Book_overdue_insert AFTER INSERT ON Book_issue FOR EACH ROW INSERT INTO Book_overdue (Ssn, Isbn, Notice_date) SELECT Ssn, Isbn, Notice_date from Book_issue where Notice_date < CURRENT_DATE();
+
+CREATE TABLE Renew_membership (
+Number int AUTO_INCREMENT, 
+Ssn Varchar (20), 
+Member_fname varchar (20),
+Member_lname varchar (20), 
+PRIMARY KEY (Number)
+);
+
+CREATE TRIGGER Renew_membership_update AFTER UPDATE ON Member FOR EACH ROW INSERT INTO Renew_membership (Ssn, Member_fname, Member_lname) SELECT Ssn, Member_fname, Member_lname from Member where Is_member_active = '0';
+
+CREATE TRIGGER Renew_membership_insert AFTER INSERT ON Member FOR EACH ROW INSERT INTO Renew_membership (Ssn, Member_fname, Member_lname) SELECT Ssn, Member_fname, Member_lname from Member where Is_member_active = '0';
+
+
+

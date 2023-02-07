@@ -1,0 +1,39 @@
+mysql> use pxs9233;
+Database changed
+mysql> select * from library;
+Empty set (0.02 sec)
+
+mysql> select * from publisher;
+Empty set (0.01 sec)
+
+mysql> select * from books;
+Empty set (0.01 sec)
+
+mysql> select * from book_author;
+Empty set (0.01 sec)
+
+mysql> select * from member;
+Empty set (0.01 sec)
+
+mysql> select * from book_require;
+Empty set (0.02 sec)
+
+mysql> select * from book_available;
+Empty set (0.01 sec)
+
+mysql> select * from book_issue;
+Empty set (0.01 sec)
+
+mysql> select * from lib_staff;
+Empty set (0.02 sec)
+
+mysql> select * from lib_staff_member;
+Empty set (0.01 sec)
+
+mysql> select * from member_phone;
+Empty set (0.01 sec)
+
+mysql> select * from author;
+Empty set (0.02 sec)
+
+mysql> notee

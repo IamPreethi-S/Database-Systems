@@ -1,0 +1,146 @@
+#use database
+use pxs9233;
+
+#Library Table Creation
+CREATE TABLE Library (
+Lib_code int NOT NULL, 
+Lib_name varchar(50) NOT NULL,
+Lib_city varchar(20) NOT NULL, 
+Lib_state varchar (20) NOT NULL, 
+Lib_country varchar(20) NOT NULL, 
+PRIMARY KEY (Lib_code)
+);
+commit;
+
+#Publisher Table Creation
+CREATE TABLE PUBLISHER (
+Publisher_id varchar (10) NOT NULL,
+Publisher_name varchar (30)NOT NULL,
+Publication_year char(4) NOT NULL,
+PRIMARY KEY (Publisher_id)
+);
+commit;
+
+#Books Table Creation
+CREATE TABLE Books (
+Isbn varchar(13) NOT NULL, 
+Title varchar(50) NOT NULL,
+Author_id varchar(50)NOT NULL, 
+Subject_area varchar(50) NOT NULL, 
+Description varchar(500) NOT NULL, 
+Category varchar(20) NOT NULL, 
+Is_lendable varchar(3) NOT NULL,
+Language varchar(20) NOT NULL, 
+Binding varchar(20) NOT NULL, 
+Edition varchar(20) NOT NULL,
+Lib_code int NOT NULL,
+Publisher_id varchar (10) NOT NULL,
+PRIMARY KEY (Isbn), 
+FOREIGN KEY (Lib_code) REFERENCES Library (Lib_code),
+FOREIGN KEY (Publisher_id) REFERENCES Publisher(Publisher_id)
+);
+commit;
+
+#Member Table Creation
+CREATE TABLE Member (
+Ssn varchar(9) NOT NULL,
+Member_fname varchar(20) NOT NULL,
+Member_lname varchar(20) NOT NULL,
+Campus_mailing_add varchar(100) NOT NULL, 
+Home_mailing_add varchar(100) NOT NULL, 
+Phone varchar(10) NOT NULL, 
+Lib_card_no varchar(20) NOT NULL, 
+Lib_card_expiry date NOT NULL, 
+Is_member_active char(3) NOT NULL,
+Is_prof char(3) NOT NULL, 
+Lib_code int NOT NULL,
+PRIMARY KEY(Ssn),
+FOREIGN KEY (Lib_code) REFERENCES Library(Lib_code)
+);
+commit;
+
+#Author Table Creation
+CREATE TABLE Author (
+Author_id varchar (20) NOT NULL,
+Author_fname varchar (30) NOT NULL,
+Author_lname varchar (30) NOT NULL,
+PRIMARY KEY (Author_id)
+);
+commit;
+
+#Book_author Table Creation
+CREATE TABLE BOOK_AUTHOR(
+Isbn varchar(13) NOT NULL, 
+Author_id varchar (20) NOT NULL,
+Author_fname varchar (30) NOT NULL,
+Author_lname varchar (30) NOT NULL,
+PRIMARY KEY (Isbn, Author_id),
+FOREIGN KEY (Isbn) REFERENCES Books(Isbn),
+FOREIGN KEY (Author_id) REFERENCES Author(Author_id)
+);
+commit;
+
+#Book_available Table Creation
+CREATE TABLE Book_available (
+Isbn varchar(13) NOT NULL, 
+Total_copies varchar(10) NOT NULL, 
+Available_copies varchar(10) NOT NULL, 
+FOREIGN KEY (Isbn) REFERENCES Books(Isbn)
+);
+commit;
+
+#Book_require Table Creation
+CREATE TABLE Book_require (
+Isbn varchar(13) NOT NULL, 
+Total_book_required varchar(10) NOT NULL, 
+FOREIGN KEY (Isbn) REFERENCES Books(Isbn)
+);
+commit;
+
+#Lib_staff Table Creation
+CREATE TABLE Lib_staff (
+Staff_id varchar(10) NOT NULL, 
+Staff_fname varchar(20) NOT NULL,
+Staff_lname varchar(20) NOT NULL, 
+Staff_type varchar(40) NOT NULL,
+Lib_code int NOT NULL, 
+PRIMARY KEY(Staff_id), 
+FOREIGN KEY (Lib_code) REFERENCES Library(Lib_code)
+);
+commit;
+
+#Book_issue Table Creation
+CREATE TABLE Book_issue (
+Issue_id varchar(10), 
+Ssn varchar(9) NOT NULL, 
+Staff_id varchar(10) NOT NULL,
+Isbn varchar(13) NOT NULL, 
+Issue_date date NOT NULL, 
+Due_date date NOT NULL, 
+Notice_date date NOT NULL, 
+Is_returned char(3) NOT NULL, 
+PRIMARY KEY (Issue_id), 
+FOREIGN KEY (Ssn) REFERENCES Member(Ssn), 
+FOREIGN KEY (Staff_id) REFERENCES Lib_staff(Staff_id), 
+FOREIGN KEY (Isbn) REFERENCES Books(Isbn)
+);
+commit;
+
+#Library_member Table Creation
+CREATE TABLE Lib_staff_member(
+Staff_id varchar(20) NOT NULL, 
+Ssn varchar (20) NOT NULL,
+PRIMARY KEY (Staff_id, Ssn),
+FOREIGN KEY (Staff_id) REFERENCES Lib_staff(Staff_id),
+FOREIGN KEY  (Ssn) REFERENCES Member(Ssn)
+);
+commit;
+
+#Member_phone Table Creation
+CREATE TABLE Member_phone (
+Ssn varchar (9) NOT NULL,
+Phone varchar(10) NOT NULL, 
+PRIMARY KEY (Ssn, Phone),
+FOREIGN KEY  (Ssn) REFERENCES Member(Ssn)
+);
+commit;

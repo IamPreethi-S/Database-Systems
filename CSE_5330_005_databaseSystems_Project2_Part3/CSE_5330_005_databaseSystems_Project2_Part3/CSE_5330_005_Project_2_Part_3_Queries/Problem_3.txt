@@ -1,0 +1,3 @@
+use pxs9233;
+
+SELECT A.Isbn,A.Title,count(B.ISBN) AS No_of_copies,week(B.Issue_date) AS Week_No,SUM(datediff(B.Notice_date,B.Issue_date)) AS No_of_Days_Loaned_Out,A.Subject_area,C.Author_fname, C.Author_lname from Books as A INNER JOIN Book_issue as B ON A.ISBN=B.ISBN INNER JOIN Book_author as C ON A.Author_id=C.Author_id GROUP BY A.Subject_area,A.Author_id,C.Author_fname, C.Author_lname,B.ISBN,week(B.Issue_date);

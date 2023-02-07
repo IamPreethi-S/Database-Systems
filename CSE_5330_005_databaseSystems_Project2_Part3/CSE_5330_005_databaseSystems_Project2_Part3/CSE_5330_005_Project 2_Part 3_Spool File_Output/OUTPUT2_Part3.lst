@@ -1,0 +1,303 @@
+mysql> use pxs9233;
+Database changed
+mysql> 
+mysql> SELECT * FROM Library;
++----------+-------------+-----------+-----------+-------------+
+| Lib_code | Lib_name    | Lib_city  | Lib_state | Lib_country |
++----------+-------------+-----------+-----------+-------------+
+|        1 | UTA Library | Arlington | Texas     | US          |
++----------+-------------+-----------+-----------+-------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM Publisher;
++--------------+---------------------------+------------------+
+| Publisher_id | Publisher_name            | Publication_year |
++--------------+---------------------------+------------------+
+| 102598635    | HarperCollins             | 1998             |
+| 128654736    | Callan                    | 1994             |
+| 145789662    | Macmillan                 | 1996             |
+| 158756955    | Midwest Theological Forum | 2000             |
+| 875968545    | Robert Molyneux           | 2006             |
++--------------+---------------------------+------------------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Books;
++------------+-----------------------------------------+-----------+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+-------------+------------+-----------+---------+----------+--------------+
+| Isbn       | Title                                   | Author_id | Subject_area                    | Description                                                                                                                                                                                                                                              | Category    | Is_lendable | Language   | Binding   | Edition | Lib_code | Publisher_id |
++------------+-----------------------------------------+-----------+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+-------------+------------+-----------+---------+----------+--------------+
+| 1254547264 | The Double                              | 5         | Literature                      | This is the object of everyoneâ€™s lust, desire, obsession, passion, and overpowering need. Itâ€™s the One Ring.                                                                                                                                         | Educational | 1           | english-US | Hardcover | Sixth   |        1 | 128654736    |
+| 1254789654 | In a Glass Darkly                       | 1         | Parenting & Family              | This needs to be the character everyone loves to hate. Mostly you want to position them as a threat, and talk about how bad things will be if they get their way.                                                                                        | Reference   | 0           | english    | Hardcover | Seventh |        1 | 102598635    |
+| 1254854547 | Ten Tales from the Decameron            | 8         | Fiction                         | And finally, youâ€™ll tell the reader what to do (nicely). Think of the reader as sitting there, dumbfounded, having just read a book description that blows their mind.                                                                                 | Rare        | 0           | english    | Hardcover | Fifth   |        1 | 102598635    |
+| 1458789652 | Rejection, The Ruling Spirit            | 2         | Pets                            | This is the object of everyoneâ€™s lust, desire, obsession, passion, and overpowering need. Itâ€™s the One Ring.                                                                                                                                         | Educational | 1           | english    | Hardcover | First   |        1 | 145789662    |
+| 1478547856 | The Inter-relations of Music and Poetry | 2         | Music and poetry                | The Inter-relations of Music and Poetry by winifred nash                                                                                                                                                                                                 | literature  | 1           | english    | paperback | first   |        1 | 102598635    |
+| 1619649059 | A Daughter of the Snows                 | 7         | Self-Help & Relationships       | Youâ€™ll tell the reader exactly whatâ€™s at stake if the Antagonist gets their way.                                                                                                                                                                     | Novel       | 1           | english    | Saddle    | First   |        1 | 102598635    |
+| 1658649059 | Python                                  | 20        | Computer Science                | Everyone likes to be part of the in-crowd. So youâ€™ll spend a smidge of time relaying what other people think of your work in general, what awards you may have won, or readers and/or reviewers are already saying about this book in particular.      | Novel       | 1           | english-UK | Hardcover | First   |        1 | 145789662    |
+| 1961619318 | The Near East: 10,000 Years of History  | 1         | Antiques & Collectibles         | Dan Kotler just wanted a cup of coffee, but he never expected to find the key to a lost city served up with his latte.                                                                                                                                   | Educational | 1           | english    | Softcover | Second  |        1 | 102598635    |
+| 1971233185 | The Cocoon: A Rest-Cure Comedy          | 2         | Art, Architecture & Photography | Youâ€™ll want to capture the readerâ€™s attention right away, so itâ€™s good to start with something that piques their interest                                                                                                                          | Information | 1           | english    | Hardcover | Third   |        1 | 145789662    |
+| 2547896542 | Little Dorrit                           | 3         | Philosophy                      | Youâ€™ll tell the reader exactly whatâ€™s at stake if the Antagonist gets their way.                                                                                                                                                                     | Novel       | 1           | hindi      | Hardcover | Second  |        1 | 145789662    |
+| 2729337632 | The Freakshow Murders                   | 3         | Awards                          | This will be the person your reader will root for throughout the book, so youâ€™ll want to set them up as likable and/or incredibly interesting right from the start.                                                                                    | Educational | 1           | english    | Softcover | Fourth  |        1 | 145789662    |
+| 3354698745 | The Four-Fifteen Express                | 4         | Psychology                      | Everyone likes to be part of the in-crowd. So youâ€™ll spend a smidge of time relaying what other people think of your work in general, what awards you may have won, or readers and/or reviewers are already saying about this book in particular.      | Novel       | 1           | spanish    | Hardcover | Third   |        1 | 102598635    |
+| 3773869856 | Pharaohs, Fellahs and Explorers         | 4         | Bibles & Christianity           | This needs to be the character everyone loves to hate. Mostly you want to position them as a threat, and talk about how bad things will be if they get their way.                                                                                        | Novel       | 1           | hindi      | Softcover | Fifth   |        1 | 128654736    |
+| 4319643959 | Hard Times                              | 5         | Biography                       | This is the object of everyoneâ€™s lust, desire, obsession, passion, and overpowering need. Itâ€™s the One Ring.                                                                                                                                         | Novel       | 1           | english    | Softcover | Sixth   |        1 | 145789662    |
+| 4732464289 | A Modern Instance                       | 6         | Business                        | Youâ€™ll tell the reader exactly whatâ€™s at stake if the Antagonist gets their way.                                                                                                                                                                     | Reference   | 0           | spanish    | Softcover | Seventh |        1 | 145789662    |
+| 5636284251 | Rich Dad Poor Dad                       | 7         | Business                        | Everyone likes to be part of the in-crowd. So youâ€™ll spend a smidge of time relaying what other people think of your work in general, what awards you may have won, or readers and/or reviewers are already saying about this book in particular.      | Educational | 1           | english-US | Saddle    | Fifth   |        1 | 128654736    |
+| 5636284254 | The Desert and the Sown                 | 10        | Literature                      | Youâ€™ll want to capture the readerâ€™s attention right away, so itâ€™s good to start with something that piques their interest                                                                                                                          | Novel       | 1           | hindi      | Softcover | Second  |        1 | 128654736    |
+| 5746982554 | White Nights                            | 15        | Nature                          | This will be the person your reader will root for throughout the book, so youâ€™ll want to set them up as likable and/or incredibly interesting right from the start.                                                                                    | Novel       | 1           | english    | Hardcover | Sixth   |        1 | 102598635    |
+| 5786289751 | Advanced Java                           | 8         | Computer Science                | And finally, youâ€™ll tell the reader what to do (nicely). Think of the reader as sitting there, dumbfounded, having just read a book description that blows their mind.                                                                                 | Information | 1           | english-US | Hardcover | Seventh |        1 | 128654736    |
+| 5786289755 | Three Soldiers                          | 11        | Literature                      | This will be the person your reader will root for throughout the book, so youâ€™ll want to set them up as likable and/or incredibly interesting right from the start.                                                                                    | Novel       | 1           | english    | Softcover | Third   |        1 | 128654736    |
+| 6422625263 | The End of Eternity                     | 13        | Current Affairs & Politics      | This is the object of everyoneâ€™s lust, desire, obsession, passion, and overpowering need. Itâ€™s the One Ring.                                                                                                                                         | Novel       | 1           | english    | Softcover | Fourth  |        1 | 128654736    |
+| 7288227188 | A Touch of Sun and Other Stories        | 14        | Diet, Health & Fitness          | Youâ€™ll tell the reader exactly whatâ€™s at stake if the Antagonist gets their way.                                                                                                                                                                     | Novel       | 1           | french     | Softcover | Fifth   |        1 | 128654736    |
+| 7355755625 | My Mark Twain                           | 15        | Nature                          | Everyone likes to be part of the in-crowd. So youâ€™ll spend a smidge of time relaying what other people think of your work in general, what awards you may have won, or readers and/or reviewers are already saying about this book in particular.      | Rare        | 0           | french     | Softcover | Sixth   |        1 | 158756955    |
+| 7355755628 | Harry Potter and Half Blood Prince      | 16        | Fiction                         | And finally, youâ€™ll tell the reader what to do (nicely). Think of the reader as sitting there, dumbfounded, having just read a book description that blows their mind.                                                                                 | Educational | 1           | english-UK | Saddle    | Sixth   |        1 | 128654736    |
+| 7492133292 | Short Stories From American History     | 18        | Literature                      | Youâ€™ll want to capture the readerâ€™s attention right away, so itâ€™s good to start with something that piques their interest                                                                                                                          | Educational | 1           | english    | Softcover | Seventh |        1 | 875968545    |
+| 7492133892 | World War 2                             | 17        | History                         | Dan Kotler just wanted a cup of coffee, but he never expected to find the key to a lost city served up with his latte.                                                                                                                                   | Information | 1           | english-US | Hardcover | Third   |        1 | 158756955    |
+| 8498738145 | The Unlived Life of Little Mary Ellen   | 19        | Humor                           | This will be the person your reader will root for throughout the book, so youâ€™ll want to set them up as likable and/or incredibly interesting right from the start.                                                                                    | Novel       | 1           | english    | Hardcover | First   |        1 | 128654736    |
+| 8523696542 | Wings of Fire                           | 12        | Cultural                        | This needs to be the character everyone loves to hate. Mostly you want to position them as a threat, and talk about how bad things will be if they get their way.                                                                                        | Educational | 1           | english-US | Saddle    | Seventh |        1 | 128654736    |
+| 8648347264 | Edith Bonham                            | 20        | Computer Science                | This needs to be the character everyone loves to hate. Mostly you want to position them as a threat, and talk about how bad things will be if they get their way.                                                                                        | Novel       | 1           | german     | Hardcover | Second  |        1 | 128654736    |
+| 8756215456 | Children of Blood and Bone              | 9         | Computers                       | Dan Kotler just wanted a cup of coffee, but he never expected to find the key to a lost city served up with his latte.                                                                                                                                   | Educational | 1           | spanish    | Softcover | First   |        1 | 128654736    |
+| 8785696445 | Fairy Prince and Other Stories          | 20        | Computer Science                | This is the object of everyoneâ€™s lust, desire, obsession, passion, and overpowering need. Itâ€™s the One Ring.                                                                                                                                         | Educational | 1           | english    | Hardcover | Fourth  |        1 | 102598635    |
+| 9278161657 | Who Moved my cheese                     | 5         | Literature                      | And finally, youâ€™ll tell the reader what to do (nicely). Think of the reader as sitting there, dumbfounded, having just read a book description that blows their mind.                                                                                 | Rare        | 0           | english-UK | Saddle    | Fourth  |        1 | 102598635    |
+| 9278161757 | The Lone Star Ranger                    | 5         | Medicine & Nursing              | Everyone likes to be part of the in-crowd. So youâ€™ll spend a smidge of time relaying what other people think of your work in general, what awards you may have won, or readers and/or reviewers are already saying about this book in particular.      | Novel       | 1           | german     | Hardcover | Third   |        1 | 102598635    |
+| 9568755624 | The Great Fire of London                | 15        | Nature                          | Youâ€™ll want to capture the readerâ€™s attention right away, so itâ€™s good to start with something that piques their interest                                                                                                                          | Novel       | 1           | english    | Hardcover | Fifth   |        1 | 102598635    |
+| 9854542541 | Calculus                                | 5         | Mathematics                     | Youâ€™ll tell the reader exactly whatâ€™s at stake if the Antagonist gets their way.                                                                                                                                                                     | Novel       | 1           | english-UK | Hardcover | Second  |        1 | 128654736    |
+| 9855755624 | A Foregone Conclusion                   | 15        | Nature                          | Dan Kotler just wanted a cup of coffee, but he never expected to find the key to a lost city served up with his latte.                                                                                                                                   | Educational | 1           | hindi      | Hardcover | Fourth  |        1 | 875968545    |
++------------+-----------------------------------------+-----------+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+-------------+------------+-----------+---------+----------+--------------+
+36 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Member;
++-----------+--------------+--------------+--------------------------------------------------+-------------------------------------------------+------------+-------------+-----------------+------------------+---------+----------+
+| Ssn       | Member_fname | Member_lname | Campus_mailing_add                               | Home_mailing_add                                | Phone      | Lib_card_no | Lib_card_expiry | Is_member_active | Is_prof | Lib_code |
++-----------+--------------+--------------+--------------------------------------------------+-------------------------------------------------+------------+-------------+-----------------+------------------+---------+----------+
+| 100205925 | Preethi      | Subramanian  | 701 South Nedderman, Arlington, Tx               | 806 Bering drive, Apt 1545, Arlington, Tx       | 6854569874 | 5925        | 2023-05-21      | 1                | 1       |        1 |
+| 165485918 | Darrel       | Myers        | 1000 Id Street, Waterbury, CT                    | 3401 Fringilla Avenue, Ketchikan, AK            | 9476973478 | 6985        | 2022-12-06      | 1                | 0       |        1 |
+| 168166842 | Fulton       | Whitley      | Ap #188-1056 Ac Ave, Hillsboro, OR               | 9663 Vel St., Denver, CO                        | 8386278838 | 2878        | 2018-02-18      | 0                | 0       |        1 |
+| 228836529 | Keerthi      | K            | Ap #391-2250 Imperdiet Rd., South Burlington, VT | 981-9786 Nam Ave, Saint Paul, MN                | 8382459118 | 3127        | 2022-12-04      | 1                | 0       |        1 |
+| 324521591 | Geraldine    | Mcintyre     | 365-8424 Quisque St., Henderson, NV              | 3199 Vel St., Athens, GA                        | 8347877634 | 6123        | 2022-01-16      | 1                | 0       |        1 |
+| 361486432 | Kim          | Ward         | 504-7794 Enim, Rd., Honolulu, HI                 | Ap #183-6261 Semper Road, Mobile, AL            | 4334461756 | 6424        | 2023-02-23      | 1                | 0       |        1 |
+| 367185235 | Piper        | Holland      | P.O. Box 279, 592 Velit Ave, Rochester, MN       | 325-2099 Praesent Street, Casper, WY            | 9815467162 | 2781        | 2022-05-19      | 1                | 0       |        1 |
+| 427438964 | Stone        | Brock        | 952-9083 Vehicula Street, Tuscaloosa, AL         | 9688 Per Rd., College, AK                       | 9699283544 | 2158        | 2021-12-12      | 1                | 1       |        1 |
+| 434253997 | Chinmayee    | Mappelaru    | P.O. Box 788, 9773 Sed Av., San Jose, CA         | P.O. Box 585, 6923 Eleifend, Rd., Akron, OH     | 1873437235 | 5362        | 2023-02-25      | 1                | 0       |        1 |
+| 456627292 | Brenden      | Mcintyre     | P.O. Box 789, 8461 Feugiat Street, Jonesboro, AR | Ap #524-1500 Vel Av., Burlington, VT            | 4741788995 | 9293        | 2022-12-11      | 1                | 1       |        1 |
+| 496357233 | Drake        | Gentry       | 7323 Arcu Ave, Kearney, NE                       | 5045 Aliquam Av., Columbus, OH                  | 6851629199 | 6819        | 2022-09-12      | 1                | 0       |        1 |
+| 521897654 | Wayne        | Burke        | Ap #167-4350 Lacus, Ave, Clarksville, TN         | 884-2499 Augue Street, Lansing, MI              | 9465854835 | 1669        | 2022-11-24      | 1                | 0       |        1 |
+| 561771369 | Cameron      | Rivera       | 7279 Nec Avenue, Jackson, MS                     | 229-6005 Enim. Avenue, Kailua, HI               | 4938191794 | 8952        | 2022-11-17      | 1                | 1       |        1 |
+| 685516647 | Vamsi        | Gunturu      | 6285 Mauris Ave, Dover, DE                       | 271-2425 Morbi Avenue, Lakewood, CO             | 1666966573 | 6674        | 2022-09-10      | 1                | 0       |        1 |
+| 736452925 | Sasidharan   | Adipelli     | 851-6498 Lorem St., Anchorage, AK                | Ap #690-1361 Donec Road, South Portland, ME     | 8759689469 | 1697        | 2023-06-07      | 1                | 0       |        1 |
+| 744243646 | Deacon       | Wynn         | 2383 Odio Av., Bozeman, MT                       | P.O. Box 631, 9428 Malesuada Av., Honolulu, HI  | 3188753665 | 8556        | 2023-04-18      | 1                | 1       |        1 |
+| 749959877 | Buckminster  | Lewis        | 5304 Sollicitudin Street, Tampa, FL              | Ap #104-2337 Sit Avenue, Overland Park, KS      | 1515279762 | 7463        | 2019-12-20      | 0                | 1       |        1 |
+| 779472588 | Yoshi        | Burt         | 3822 Ipsum Road, Toledo, OH                      | 2856 Eget, Avenue, Austin, TX                   | 9127831426 | 7629        | 2022-02-18      | 1                | 0       |        1 |
+| 789658745 | Praneetha    | S            | 80 nedderman, arlington, Tx                      | 820 bering drive, arlington, tx                 | 7895478547 | 8745        | 2022-11-03      | 0                | 1       |        1 |
+| 883163516 | Luke         | Branch       | 714-9657 Aliquam Rd., Lawton, OK                 | 1463 Non, Ave, Springfield, MO                  | 3762378239 | 6874        | 2021-08-29      | 1                | 0       |        1 |
+| 893633943 | Kiara        | Knight       | P.O. Box 544, 1308 Cubilia Av., Hattiesburg, MS  | Ap #780-5311 Quam. Avenue, South Burlington, VT | 4118723478 | 8313        | 2022-11-19      | 1                | 0       |        1 |
+| 896397262 | Ciaran       | Mccullough   | P.O. Box 745, 4836 Convallis Rd., Richmond, VA   | Ap #581-7435 Molestie. St., Spokane, WA         | 5562446865 | 9814        | 2022-05-27      | 1                | 0       |        1 |
+| 912669597 | Ivor         | Jenkins      | Ap #298-2382 Sed St., Augusta, GA                | Ap #120-5583 Gravida. Av., San Diego, CA        | 9978265913 | 7433        | 2022-01-16      | 1                | 0       |        1 |
+| 982193141 | Wyatt        | Barnes       | 844-8534 Arcu. Street, Eugene, OR                | Ap #269-8301 In Ave, Eugene, OR                 | 7266693694 | 7699        | 2020-03-16      | 0                | 0       |        1 |
+| 983486559 | Shana        | Cannon       | P.O. Box 530, 3650 Sit Street, Akron, OH         | Ap #204-4355 Consequat Rd., Erie, PA            | 6421378866 | 6133        | 2022-09-07      | 1                | 0       |        1 |
+| 988455183 | Willa        | Mcgee        | 658-3615 Dolor Av., Allentown, PA                | 170-7402 Auctor Avenue, Fayetteville, AR        | 7217633142 | 2333        | 2022-12-22      | 1                | 1       |        1 |
++-----------+--------------+--------------+--------------------------------------------------+-------------------------------------------------+------------+-------------+-----------------+------------------+---------+----------+
+26 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Author;
++-----------+--------------+---------------+
+| Author_id | Author_fname | Author_lname  |
++-----------+--------------+---------------+
+| 1         | Yvette       | Monroe        |
+| 10        | Daphne       | Mcneil        |
+| 11        | Lael         | Hewitt        |
+| 12        | Tui          | T. Sutherland |
+| 13        | Macy         | Swanson       |
+| 14        | Scarlett     | Buckner       |
+| 15        | Sage         | Rowe          |
+| 16        | Carolyn      | Rios          |
+| 17        | Julie        | Raymond       |
+| 18        | Jane         | Wilkerson     |
+| 19        | Jaquelyn     | Rivera        |
+| 2         | Winifred     | Nash          |
+| 20        | Bertha       | French        |
+| 3         | Yael         | Reese         |
+| 4         | Georgia      | Valentine     |
+| 5         | Azalia       | Rojas         |
+| 6         | Kessie       | Frank         |
+| 7         | Robert       | KiyosakiÂ     |
+| 8         | Medge        | Mendez        |
+| 9         | Marcia       | Richard       |
++-----------+--------------+---------------+
+20 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Book_author;
++------------+-----------+--------------+---------------+
+| Isbn       | Author_id | Author_fname | Author_lname  |
++------------+-----------+--------------+---------------+
+| 1961619318 | 1         | Yvette       | Monroe        |
+| 1971233185 | 2         | Winifred     | Nash          |
+| 2729337632 | 3         | Yael         | Reese         |
+| 3773869856 | 4         | Georgia      | Valentine     |
+| 4319643959 | 5         | Azalia       | Rojas         |
+| 4732464289 | 6         | Kessie       | Frank         |
+| 5636284251 | 7         | Robert       | KiyosakiÂ     |
+| 5636284254 | 10        | Daphne       | Mcneil        |
+| 5786289751 | 8         | Medge        | Mendez        |
+| 5786289755 | 11        | Lael         | Hewitt        |
+| 6422625263 | 13        | Macy         | Swanson       |
+| 7288227188 | 14        | Scarlett     | Buckner       |
+| 7355755625 | 15        | Sage         | Rowe          |
+| 7355755628 | 16        | Carolyn      | Rios          |
+| 7492133292 | 18        | Jane         | Wilkerson     |
+| 7492133892 | 17        | Julie        | Raymond       |
+| 8498738145 | 19        | Jaquelyn     | Rivera        |
+| 8523696542 | 12        | Tui          | T. Sutherland |
+| 8648347264 | 20        | Bertha       | French        |
+| 8756215456 | 9         | Marcia       | Richard       |
++------------+-----------+--------------+---------------+
+20 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Book_available;
++------------+--------------+------------------+
+| Isbn       | Total_copies | Available_copies |
++------------+--------------+------------------+
+| 5786289751 | 10           | 9                |
+| 8756215456 | 12           | 10               |
+| 5636284254 | 11           | 9                |
+| 5786289755 | 8            | 7                |
+| 8523696542 | 7            | 5                |
+| 6422625263 | 10           | 11               |
+| 7288227188 | 5            | 5                |
+| 7355755625 | 4            | 4                |
+| 7355755628 | 6            | 6                |
+| 7492133892 | 7            | 7                |
+| 7492133292 | 3            | 3                |
+| 8498738145 | 4            | 3                |
+| 8648347264 | 4            | 3                |
+| 1254547264 | 10           | 9                |
+| 9854542541 | 1            | 0                |
+| 9278161757 | 10           | 9                |
+| 9278161657 | 8            | 7                |
+| 9855755624 | 5            | 5                |
+| 9568755624 | 6            | 6                |
+| 5746982554 | 8            | 8                |
+| 1254789654 | 9            | 9                |
+| 1458789652 | 11           | 11               |
+| 2547896542 | 12           | 12               |
+| 3354698745 | 6            | 6                |
+| 1254854547 | 4            | 4                |
++------------+--------------+------------------+
+25 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Book_require;
++------------+---------------------+
+| Isbn       | Total_book_required |
++------------+---------------------+
+| 2729337632 | 5                   |
+| 3773869856 | 3                   |
+| 4319643959 | 4                   |
+| 8498738145 | 8                   |
+| 8648347264 | 7                   |
+| 1619649059 | 3                   |
+| 1961619318 | 4                   |
+| 1971233185 | 5                   |
+| 2729337632 | 6                   |
+| 3773869856 | 7                   |
++------------+---------------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Lib_staff;
++----------+-------------+-------------+----------------------------------+----------+
+| Staff_id | Staff_fname | Staff_lname | Staff_type                       | Lib_code |
++----------+-------------+-------------+----------------------------------+----------+
+| 1        | Rafi        | Marsden     | Chief Librarian                  |        1 |
+| 10       | Eman        | Salgado     | Library Assistant                |        1 |
+| 11       | Emma        | Watson      | Departmental Associate Librarian |        1 |
+| 12       | Michael     | Thomson     | Reference Librarian              |        1 |
+| 13       | Peter       | Douglas     | Check-out Staff                  |        1 |
+| 14       | John        | Ramson      | Library Assistant                |        1 |
+| 15       | Hannah      | Katheryn    | Departmental Associate Librarian |        1 |
+| 2        | Tori        | Whelan      | Departmental Associate Librarian |        1 |
+| 3        | Hashir      | Walton      | Departmental Associate Librarian |        1 |
+| 4        | Callen      | Hobbs       | Reference Librarian              |        1 |
+| 5        | Kamile      | Daly        | Reference Librarian              |        1 |
+| 6        | Zofia       | Kavanagh    | Check-out Staff                  |        1 |
+| 7        | Fionnuala   | Millington  | Check-out Staff                  |        1 |
+| 8        | Alessio     | Nichols     | Library Assistant                |        1 |
+| 9        | Keegan      | Williams    | Library Assistant                |        1 |
++----------+-------------+-------------+----------------------------------+----------+
+15 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Book_issue;
++----------+-----------+----------+------------+------------+------------+-------------+-------------+
+| Issue_id | Ssn       | Staff_id | Isbn       | Issue_date | Due_date   | Notice_date | Is_returned |
++----------+-----------+----------+------------+------------+------------+-------------+-------------+
+| 1        | 685516647 | 6        | 8523696542 | 2022-10-02 | 2022-10-23 | 2022-10-29  | 0           |
+| 10       | 427438964 | 10       | 1254547264 | 2022-05-04 | 2022-05-25 | 2022-06-01  | 0           |
+| 11       | 736452925 | 9        | 9854542541 | 2022-07-20 | 2022-08-11 | 2022-08-18  | 0           |
+| 12       | 324521591 | 9        | 9278161757 | 2022-06-24 | 2022-07-16 | 2022-07-23  | 0           |
+| 13       | 427438964 | 10       | 9278161657 | 2022-11-06 | 2022-11-27 | 2022-12-04  | 0           |
+| 14       | 988455183 | 14       | 9855755624 | 2022-05-27 | 2022-08-24 | 2022-09-07  | 1           |
+| 15       | 779472588 | 14       | 9568755624 | 2022-10-10 | 2022-10-31 | 2022-11-07  | 1           |
+| 16       | 456627292 | 5        | 5636284254 | 2022-11-21 | 2023-02-21 | 2023-02-28  | 1           |
+| 17       | 100205925 | 5        | 8523696542 | 2022-11-21 | 2023-02-21 | 2023-02-28  | 0           |
+| 2        | 685516647 | 7        | 6422625263 | 2022-09-27 | 2022-10-18 | 2022-10-25  | 1           |
+| 3        | 685516647 | 8        | 7288227188 | 2022-09-14 | 2022-10-07 | 2022-10-14  | 1           |
+| 4        | 685516647 | 9        | 7355755625 | 2022-10-19 | 2022-11-10 | 2022-11-17  | 0           |
+| 5        | 685516647 | 10       | 7355755628 | 2022-06-07 | 2022-06-30 | 2022-07-07  | 0           |
+| 6        | 744243646 | 6        | 7492133892 | 2022-06-18 | 2022-09-18 | 2022-10-02  | 0           |
+| 7        | 744243646 | 7        | 7492133292 | 2022-08-11 | 2022-11-10 | 2022-11-24  | 0           |
+| 8        | 367185235 | 8        | 8498738145 | 2022-11-01 | 2022-11-22 | 2022-11-29  | 0           |
+| 9        | 983486559 | 9        | 8648347264 | 2022-08-31 | 2022-09-21 | 2022-09-28  | 0           |
++----------+-----------+----------+------------+------------+------------+-------------+-------------+
+17 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Lib_staff_member
+    -> ;
++----------+-----------+
+| Staff_id | Ssn       |
++----------+-----------+
+| 13       | 165485918 |
+| 3        | 165485918 |
+| 2        | 228836529 |
+| 9        | 361486432 |
+| 10       | 367185235 |
+| 15       | 496357233 |
+| 11       | 561771369 |
+| 8        | 736452925 |
+| 14       | 744243646 |
+| 5        | 779472588 |
+| 7        | 883163516 |
+| 4        | 893633943 |
+| 12       | 896397262 |
+| 6        | 912669597 |
+| 1        | 983486559 |
++----------+-----------+
+15 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Member_phone;
++-----------+------------+
+| Ssn       | Phone      |
++-----------+------------+
+| 165485918 | 9476973478 |
+| 168166842 | 8386278838 |
+| 228836529 | 8382459118 |
+| 324521591 | 8347877634 |
+| 361486432 | 4334461756 |
+| 367185235 | 9815467162 |
+| 427438964 | 9699283544 |
+| 434253997 | 1873437235 |
+| 456627292 | 4741788995 |
+| 496357233 | 6851629199 |
+| 521897654 | 9465854835 |
+| 561771369 | 4938191794 |
+| 685516647 | 1666966573 |
+| 736452925 | 8759689469 |
+| 744243646 | 3188753665 |
+| 749959877 | 1515279762 |
+| 779472588 | 9127831426 |
+| 883163516 | 3762378239 |
+| 893633943 | 4118723478 |
+| 896397262 | 5562446865 |
+| 912669597 | 9978265913 |
+| 982193141 | 7266693694 |
+| 983486559 | 6421378866 |
+| 988455183 | 7217633142 |
++-----------+------------+
+24 rows in set (0.01 sec)
+
+mysql> notee;

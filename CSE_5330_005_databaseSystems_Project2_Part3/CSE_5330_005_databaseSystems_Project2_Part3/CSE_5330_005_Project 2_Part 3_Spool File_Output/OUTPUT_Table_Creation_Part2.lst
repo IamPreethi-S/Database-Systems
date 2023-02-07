@@ -1,0 +1,77 @@
+mysql> use pxs9233;
+Database changed
+mysql> source CREATE_TABLES_LIBRARY_DATABASE.txt
+Database changed
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.11 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_pxs9233 |
++-------------------+
+| author            |
+| book_author       |
+| book_available    |
+| book_issue        |
+| book_require      |
+| books             |
+| confirmed_cases   |
+| county            |
+| deaths            |
+| lib_staff         |
+| lib_staff_member  |
+| library           |
+| member            |
+| member_phone      |
+| publisher         |
+| state             |
+| vaccinations      |
++-------------------+
+17 rows in set (0.01 sec)
+
+mysql> notee;

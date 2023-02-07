@@ -1,0 +1,29 @@
+mysql> use pxs9233;
+Database changed
+
+mysql> 
+mysql> SELECT A.Isbn,A.Title,count(B.ISBN) AS No_of_copies,week(B.Issue_date) AS Week_No,SUM(datediff(B.Notice_date,B.Issue_date)) AS No_of_Days_Loaned_Out,A.Subject_area,C.Author_fname, C.Author_lname from Books as A INNER JOIN Book_issue as B ON A.ISBN=B.ISBN INNER JOIN Book_author as C ON A.Author_id=C.Author_id GROUP BY A.Subject_area,A.Author_id,C.Author_fname, C.Author_lname,B.ISBN,week(B.Issue_date);
++------------+---------------------------------------+--------------+---------+-----------------------+----------------------------+--------------+---------------+
+| Isbn       | Title                                 | No_of_copies | Week_No | No_of_Days_Loaned_Out | Subject_area               | Author_fname | Author_lname  |
++------------+---------------------------------------+--------------+---------+-----------------------+----------------------------+--------------+---------------+
+| 8523696542 | Wings of Fire                         |            1 |      40 |                    27 | Cultural                   | Tui          | T. Sutherland |
+| 1254547264 | The Double                            |            1 |      18 |                    28 | Literature                 | Azalia       | Rojas         |
+| 9854542541 | Calculus                              |            1 |      29 |                    29 | Mathematics                | Azalia       | Rojas         |
+| 9278161757 | The Lone Star Ranger                  |            1 |      25 |                    29 | Medicine & Nursing         | Azalia       | Rojas         |
+| 9278161657 | Who Moved my cheese                   |            1 |      45 |                    28 | Literature                 | Azalia       | Rojas         |
+| 9855755624 | A Foregone Conclusion                 |            1 |      21 |                   103 | Nature                     | Sage         | Rowe          |
+| 9568755624 | The Great Fire of London              |            1 |      41 |                    28 | Nature                     | Sage         | Rowe          |
+| 5636284254 | The Desert and the Sown               |            1 |      47 |                    99 | Literature                 | Daphne       | Mcneil        |
+| 8523696542 | Wings of Fire                         |            1 |      47 |                    99 | Cultural                   | Tui          | T. Sutherland |
+| 6422625263 | The End of Eternity                   |            1 |      39 |                    28 | Current Affairs & Politics | Macy         | Swanson       |
+| 7288227188 | A Touch of Sun and Other Stories      |            1 |      37 |                    30 | Diet, Health & Fitness     | Scarlett     | Buckner       |
+| 7355755625 | My Mark Twain                         |            1 |      42 |                    29 | Nature                     | Sage         | Rowe          |
+| 7355755628 | Harry Potter and Half Blood Prince    |            1 |      23 |                    30 | Fiction                    | Carolyn      | Rios          |
+| 7492133892 | World War 2                           |            1 |      24 |                   106 | History                    | Julie        | Raymond       |
+| 7492133292 | Short Stories From American History   |            1 |      32 |                   105 | Literature                 | Jane         | Wilkerson     |
+| 8498738145 | The Unlived Life of Little Mary Ellen |            1 |      44 |                    28 | Humor                      | Jaquelyn     | Rivera        |
+| 8648347264 | Edith Bonham                          |            1 |      35 |                    28 | Computer Science           | Bertha       | French        |
++------------+---------------------------------------+--------------+---------+-----------------------+----------------------------+--------------+---------------+
+17 rows in set (0.01 sec)
+
+mysql> notee;
